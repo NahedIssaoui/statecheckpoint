@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import './Person.css';
 
 export class Person extends Component {
     state = {
         person :{
             fullName : "Nahed ISSAOUI",
-            bio :"I'm a software developer",
-            imgSrc : "https://i.pinimg.com/736x/b4/b4/4d/b4b44d3367a51b5f4cc9d35a6307b594--laptop-mac-computer-laptop.jpg",
-            profession : "Software Engineer",
+            bio :"I'm a software Engineer",
+            imgSrc : "https://cdn.dribbble.com/users/1857592/screenshots/3848396/character-typing.gif",
+            profession : "Software Developer",
         },
         show : false,
         mountingtime :false
@@ -25,14 +26,14 @@ export class Person extends Component {
      const { fullName, bio, imgSrc, profession } = this.state.person;
     return (
       <div>
-        <button onClick={this.showProfile}>Show Profile</button>
+        <button className="button-91" onClick={this.showProfile}>Show Profile</button>
         {this.state.show ?  (
-            <div>
-            <h1>{fullName}</h1>
-            <p>{bio}</p>
+         <div>
             <img src={imgSrc}  alt='Profile'/>
-            <p>{profession}</p>
-            <p>Time : {this.state.mountingtime}</p>
+            <h1> {fullName}</h1>
+            <p>{bio}</p>
+            <p> Profession : {profession}</p>
+            <p className='time'>Elapsed Time : {this.state.mountingtime}</p>
          </div>): null}
       </div>
     )
@@ -40,3 +41,4 @@ export class Person extends Component {
 }
 
 export default Person
+
